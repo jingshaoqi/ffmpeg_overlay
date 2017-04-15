@@ -377,8 +377,8 @@ int main(int argc,char* argv[])
 {
 
 #ifdef _MSC_VER
-	char* video_file = "H:\\iis.mp4";
-	char* overlay_video_file = "H:\\logo.jpg";
+	char* video_file = "D:\\iis.mp4";
+	char* overlay_video_file = "D:\\logo.jpg";
 #else
 	char* video_file = "outFileSrc.mp4";
 	char* overlay_video_file = "my_logo.png";
@@ -539,7 +539,7 @@ int overlay_transcode_step(AVFrame* mOverlayFrame) {
 		mOverlayFrame->pts = best_effort_timestamp;
 
 		if (av_buffersrc_add_frame_flags(bufferoverlay_ctx, mOverlayFrame, AV_BUFFERSRC_FLAG_PUSH) < 0) {
-			av_log(NULL, AV_LOG_ERROR, "Error while feeding the audio filtergraph\n");
+			av_log(NULL, AV_LOG_ERROR, "Error while feeding the audio filter graph\n");
 			return -1;
 		}
 	}
